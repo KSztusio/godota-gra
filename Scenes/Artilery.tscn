@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Artilery.gd" type="Script" id=2]
+
+[sub_resource type="CubeMesh" id=4]
+size = Vector3( 2, 2, 4 )
+
+[sub_resource type="BoxShape" id=9]
+extents = Vector3( 1, 1, 2 )
+
+[sub_resource type="CylinderMesh" id=5]
+top_radius = 0.5
+bottom_radius = 0.5
+height = 10.0
+
+[sub_resource type="CylinderShape" id=6]
+margin = 0.02
+radius = 0.5
+height = 5.0
+
+[node name="Artilery" type="KinematicBody"]
+script = ExtResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 9 )
+
+[node name="oś" type="SpringArm" parent="."]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 1, 0 )
+spring_length = 0.0
+
+[node name="KinematicBody" type="KinematicBody" parent="oś"]
+transform = Transform( 0.999983, -0.00586427, 0, 0.00586427, 0.999983, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="oś/KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="oś/KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0 )
+shape = SubResource( 6 )
+
+[node name="koniec" type="SpringArm" parent="oś/KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -4.26425e-08, 0.219795, -0.975546, 9.60755e-09, 0.975546, 0.219795, 1, 0, -4.37114e-08, -5.8154, 3.20779, 0 )

@@ -9,15 +9,3 @@ func handle_movement_input(delta):
 	if(Input.is_action_pressed("down")):
 		rotation_degrees.x -= rotation_amount
 		rotation_degrees.x = clamp(rotation_degrees.x, -90.0, -20.0)
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

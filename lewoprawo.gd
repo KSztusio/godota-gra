@@ -7,9 +7,10 @@ func _ready():
 func _process(delta):
 	handle_movement_input(delta)
 func handle_movement_input(delta):
-	if(Input.is_action_pressed("left")):
+	if Input.is_action_pressed("left") and rotation.x > -90:
 		new_rotation += Quat(Vector3.UP* rotation_amount).get_euler()
-	if(Input.is_action_pressed("right")):
+		
+	if Input.is_action_pressed("right") and rotation.x < 90:
 		new_rotation += Quat(Vector3.DOWN * rotation_amount).get_euler()
 	rotation = rotation.linear_interpolate(new_rotation, delta * movement_time)
 
