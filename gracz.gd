@@ -2,6 +2,7 @@ extends KinematicBody
 export var speed := 7.0
 export var jump_strenght := 20.0
 export var gravity := 50
+export var mouse_sensitivity = 1
 
 var _velocity := Vector3.ZERO
 var _snap_vector := Vector3.DOWN
