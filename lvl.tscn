@@ -89,5 +89,5 @@ shape = SubResource( 6 )
 [node name="koniec" type="SpringArm" parent="SpringArm/KinematicBody/oś/KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0 )
 
-[node name="Camera" type="Camera" parent="SpringArm"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 10 )
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -4.37114e-08, 0.34202, -0.939693, 0, 0.939693, 0.34202, 1, 1.49502e-08, -4.10753e-08, -170, 10, 0 )
