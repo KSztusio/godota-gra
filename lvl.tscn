@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://lewoprawo.gd" type="Script" id=1]
 [ext_resource path="res://materials/concrete/concrete_ld.tres" type="Material" id=2]
 [ext_resource path="res://oslufa.gd" type="Script" id=3]
+[ext_resource path="res://koniec.gd" type="Script" id=4]
 
 [sub_resource type="BoxShape" id=1]
 margin = 0.471
@@ -88,6 +89,8 @@ shape = SubResource( 6 )
 
 [node name="koniec" type="SpringArm" parent="SpringArm/KinematicBody/oś/KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0 )
+script = ExtResource( 4 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( -4.37114e-08, 0.34202, -0.939693, 0, 0.939693, 0.34202, 1, 1.49502e-08, -4.10753e-08, -170, 10, 0 )
+transform = Transform( 1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, -100, 20, 150 )
+far = 160.1
