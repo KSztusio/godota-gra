@@ -2,6 +2,7 @@ extends RigidBody
 var timer = Timer.new()
 export var speed = 150
 var done = 0
+var col = []
 onready var r = get_node('rad')
 var tt = preload('tonk.tscn')
 func _physics_process(_delta):
@@ -20,8 +21,13 @@ func _physics_process(_delta):
 
 
 func _on_rad_body_entered(body):
-	if body.get_name() == 'tonk':
+	if "tonk" in body.get_name():
 		queue_free()
+		col = r.get_overlapping_bodies()
+		for name in col:
+			var n = str(name)
+			if n != 'lvl':
+				name.queue_free()
 	if body.get_name() == 'lvl':
 		queue_free()
 	print(body.get_name())

@@ -53,18 +53,3 @@ shape = SubResource( 3 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 1 )
-
-[node name="hitbox" type="Area" parent="."]
-
-[node name="CollisionShape" type="CollisionShape" parent="hitbox"]
-shape = SubResource( 1 )
-
-[node name="CollisionShape2" type="CollisionShape" parent="hitbox"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.5, 0 )
-shape = SubResource( 3 )
-
-[node name="CollisionShape3" type="CollisionShape" parent="hitbox"]
-transform = Transform( 0.173648, 0.984808, 0, -0.984808, 0.173648, 0, 0, 0, 1, 4, 1.7, 0 )
-shape = SubResource( 5 )
-
-[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
