@@ -19,15 +19,10 @@ func _physics_process(_delta):
 		done = 1
 		
 
-
 func _on_rad_body_entered(body):
 	if "tonk" in body.get_name():
 		queue_free()
-		col = r.get_overlapping_bodies()
-		print(col)
-		for name in col:
-			var n = str(name)
-			if not 'lvl' in n:
-				name.queue_free()
+		body.queue_free()
 	if body.get_name() == 'lvl':
 		queue_free()
+	
