@@ -13,7 +13,8 @@ radius = 0.5
 radius = 0.5
 
 [node name="pocisk" type="RigidBody"]
-gravity_scale = 7.0
+mass = 1.53061
+gravity_scale = 9.0
 contact_monitor = true
 script = ExtResource( 1 )
 

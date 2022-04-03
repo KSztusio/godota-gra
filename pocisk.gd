@@ -1,6 +1,6 @@
 extends RigidBody
 var timer = Timer.new()
-export var speed = 150
+export var speed = 250
 var done = 0
 var col = []
 onready var r = get_node('rad')
@@ -24,10 +24,10 @@ func _on_rad_body_entered(body):
 	if "tonk" in body.get_name():
 		queue_free()
 		col = r.get_overlapping_bodies()
+		print(col)
 		for name in col:
 			var n = str(name)
-			if n != 'lvl':
+			if not 'lvl' in n:
 				name.queue_free()
 	if body.get_name() == 'lvl':
 		queue_free()
-	print(body.get_name())
