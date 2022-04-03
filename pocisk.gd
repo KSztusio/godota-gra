@@ -1,7 +1,8 @@
 extends RigidBody
-export var speed = 100
+export var speed = 150
 export var done = 0
-func _physics_process(delta):
+onready var r = get_node('rad')
+func _physics_process(_delta):
 	var vy = 0
 	var vpoziom = 0
 	var vx = 0
@@ -13,8 +14,3 @@ func _physics_process(delta):
 		vz = -sin(rotation.y) * vpoziom
 		apply_impulse(Vector3.ZERO, Vector3(vx, vy, vz))
 		done = 1
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

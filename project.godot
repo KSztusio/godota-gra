@@ -64,6 +64,12 @@ shot={
  ]
 }
 
+[layer_names]
+
+3d_render/layer_9="podloga"
+3d_render/layer_10="enemies"
+3d_render/layer_11="shell"
+
 [physics]
 
 common/enable_pause_aware_picking=true

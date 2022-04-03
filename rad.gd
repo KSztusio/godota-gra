@@ -1,9 +1,9 @@
-extends KinematicBody
-export var speed = 20
-var _velocity = Vector3.ZERO
-func _physics_process(delta):
-	_velocity = Vector3(speed*delta, 0, 0)
-	_velocity = move_and_collide(_velocity, true, true, false)
+extends Area
+export var col = []
+onready var t = get_node('ttonk')
+func _process(delta):
+	col = get_overlapping_areas()
+	print(col.size(),t)
 
 # Declare member variables here. Examples:
 # var a = 2
