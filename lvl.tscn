@@ -32,7 +32,6 @@ height = 10.0
 [node name="poziom" type="Spatial"]
 
 [node name="lvl" type="RigidBody" parent="."]
-collision_layer = 257
 mode = 1
 __meta__ = {
 "_edit_lock_": true
@@ -110,3 +109,11 @@ script = ExtResource( 5 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 400, 0 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="Spatial" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer" to="Spatial2" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer" to="Spatial3" method="_on_Timer_timeout"]

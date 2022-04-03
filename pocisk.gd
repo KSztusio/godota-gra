@@ -1,7 +1,9 @@
 extends RigidBody
+var timer = Timer.new()
 export var speed = 150
-export var done = 0
+var done = 0
 onready var r = get_node('rad')
+var tt = preload('tonk.tscn')
 func _physics_process(_delta):
 	var vy = 0
 	var vpoziom = 0
@@ -14,3 +16,12 @@ func _physics_process(_delta):
 		vz = -sin(rotation.y) * vpoziom
 		apply_impulse(Vector3.ZERO, Vector3(vx, vy, vz))
 		done = 1
+		
+
+
+func _on_rad_body_entered(body):
+	if body.get_name() == 'tonk':
+		queue_free()
+	if body.get_name() == 'lvl':
+		queue_free()
+	print(body.get_name())
